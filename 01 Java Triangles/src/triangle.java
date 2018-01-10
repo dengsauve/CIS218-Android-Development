@@ -7,6 +7,7 @@ class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("How long should the side be (2+): ");
         int sideLength = scanner.nextInt();
+        System.out.println();
 
         //print shapes
         System.out.println(RegularTriangle(sideLength));
