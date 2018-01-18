@@ -2,6 +2,7 @@ public class Animal {
     // VOCAB: Encapsulation
     private String name;
     private String color;
+    private String gender;
 
     public Animal (String name){
         //this.name = name;

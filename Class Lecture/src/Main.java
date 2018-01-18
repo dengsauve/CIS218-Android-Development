@@ -16,6 +16,9 @@ public class Main{
         System.out.println(zach.getColor());
 
         System.out.println(zach);
+
+        Zebra john = new Zebra("John", "Black and White", 5, 55);
+        System.out.println(john);
     }
 }
 
