@@ -130,11 +130,12 @@ public class Main {
     result = ( (Rect2D)( rects.get( 11 ) ) ).contains( (Rect2D)rects.get( 10 ) );
     System.out.println( "R14 Contains R13 (false):" + colorError( false, result ) );
 
+    // Updated both outputs below per announcement
     result = ( (Rect2D)( rects.get( 12 ) ) ).overlaps( (Rect2D)rects.get( 13 ) );
-    System.out.println( "R13 Overlaps R14 (false) :" + colorError( true, result ) );
+    System.out.println( "R13 Overlaps R14 (true) :" + colorError( true, result ) );
 
     result = ( (Rect2D)( rects.get( 13 ) ) ).overlaps( (Rect2D)rects.get( 12 ) );
-    System.out.println( "R14 Overlaps R13 (false) :" + colorError( true, result ) );
+    System.out.println( "R14 Overlaps R13 (true) :" + colorError( true, result ) );
     System.out.println();
 
 //    availableEngine();
