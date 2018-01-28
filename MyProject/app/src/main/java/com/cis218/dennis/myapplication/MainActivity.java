@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.view.View;
+import android.util.Log;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     Button btn1;
     EditText edtResult;
+    Button btnPlus, btnMinus, btnMult, btnDiv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +21,22 @@ public class MainActivity extends AppCompatActivity {
 
         btn1 = (Button)findViewById( R.id.btn1 );
         edtResult = (EditText)findViewById( R.id.edtResult );
+        btnPlus = (Button)findViewById( R.id.btnPlus );
+        btnMinus = (Button)findViewById( R.id.btnMinus );
+        btnMult = (Button)findViewById( R.id.btnMult );
+        btnDiv = (Button)findViewById( R.id.btnDiv );
     }
 
-    public void btnOnClick( View v ){
+    public void btnOperationOnClick(View v){
+        int operation = ((Button)v).getId();
+        Log.i("CALC", "ButtonID: " + operation);
+        Log.i("CALC", "Is Plus: " + ( operation == btnPlus.getId() ));
+        Toast.makeText(this, "ButtonID: " + operation, Toast.LENGTH_SHORT).show();
+    }
+
+    public void btnNumberOnClick(View v ){
+        String newButton = ( (Button) v ).getText().toString();
         String currentResult = edtResult.getText().toString();
-        edtResult.setText(currentResult + "1");
+        edtResult.setText(currentResult + newButton);
     }
 }
