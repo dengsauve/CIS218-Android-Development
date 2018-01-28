@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn1;
     EditText edtResult;
     Button btnPlus, btnMinus, btnMult, btnDiv;
+    int pendingOperation = 0;
+    double firstNumber, lastNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +34,32 @@ public class MainActivity extends AppCompatActivity {
         Log.i("CALC", "ButtonID: " + operation);
         Log.i("CALC", "Is Plus: " + ( operation == btnPlus.getId() ));
         Toast.makeText(this, "ButtonID: " + operation, Toast.LENGTH_SHORT).show();
+        pendingOperation = operation;
     }
 
     public void btnNumberOnClick(View v ){
         String newButton = ( (Button) v ).getText().toString();
         String currentResult = edtResult.getText().toString();
         edtResult.setText(currentResult + newButton);
+    }
+
+    public void btnEqualsOnClick( View v ){
+        if (pendingOperation != 0 ){
+            switch (pendingOperation){
+                case R.id.btnPlus:
+                    // Addition Logic
+                    break;
+                case R.id.btnMinus:
+                    // Subtraction Logic
+                    break;
+                case R.id.btnMult:
+                    // Multiplication Logic
+                    break;
+                case R.id.btnDiv:
+                    // Division Logic
+                    break;
+                default: break;
+            }
+        }
     }
 }
