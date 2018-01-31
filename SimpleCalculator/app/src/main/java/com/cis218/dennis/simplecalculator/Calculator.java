@@ -10,7 +10,7 @@ import android.util.Log;
 
 public class Calculator extends AppCompatActivity {
 
-    Button btnPlus, btnMin, btnMult, btnDiv, btnBack;
+    Button btnPlus, btnMin, btnMult, btnDiv;
     EditText edtResult;
     int pendingOperation = 0;
     double firstNumber, secondNumber;
@@ -25,16 +25,74 @@ public class Calculator extends AppCompatActivity {
         btnMin = (Button)findViewById( R.id.btnMin );
         btnMult = (Button)findViewById( R.id.btnMult );
         btnDiv = (Button)findViewById( R.id.btnDiv );
-        btnBack = (Button)findViewById( R.id.btnBack );
 
     }
 
     public void btnOperationOnClick(View v){
-        // Check if pendingOperation is still 0?
-        // if so, store ~v.getId as pending operation
-        // If not, perform pending operation as (firstNumber)(pendingOperation)(secondNumber)
-        // Then store resultant as first number, and currentOperation as pending operation
-        // update editText
+        int operation = ( (Button)v ).getId();
+        Log.i("CALC", "Button ID: " + operation);
+
+        boolean notEquals = operation != R.id.btnEquals;
+        Log.i("CALC", "Is notEquals: " + notEquals);
+
+        if(pendingOperation == 0){
+            // store operation
+            pendingOperation = operation;
+            // store current number as first number
+            firstNumber = Double.parseDouble(edtResult.getText().toString());
+            // clear text box
+            edtResult.setText("");
+        }
+        else{
+            // capture and store the secondNumber
+            secondNumber = Double.parseDouble(edtResult.getText().toString());
+            switch(pendingOperation){
+                case R.id.btnPlus:
+                    Log.i("CALC", "Addition operation reached");
+
+                    // perform addition logic + store result
+                    firstNumber += secondNumber;
+                    // update display with result
+                    edtResult.setText(Double.toString(firstNumber));
+                    break;
+
+                case R.id.btnMin:
+                    Log.i("CALC", "Subtraction operation reached");
+                    // perform addition logic + store result
+                    firstNumber = firstNumber - secondNumber;
+                    // update display with result
+                    edtResult.setText(Double.toString(firstNumber));
+                    break;
+
+                case R.id.btnMult:
+                    Log.i("CALC", "Multiplication operation reached");
+
+                    // perform addition logic + store result
+                    firstNumber = firstNumber * secondNumber;
+                    // update display with result
+                    edtResult.setText(Double.toString(firstNumber));
+                    break;
+
+                case R.id.btnDiv:
+                    Log.i("CALC", "Division Operation Reached");
+                    // perform addition logic + store result
+                    firstNumber = firstNumber / secondNumber;
+                    // update display with result
+                    edtResult.setText(Double.toString(firstNumber));
+                    break;
+            }
+        }
+
+        // store operation
+        if (notEquals) {
+            pendingOperation = operation;
+            edtResult.setText("");
+            Toast.makeText(this, "Result: " + Double.toString(firstNumber), Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            pendingOperation = 0;
+        }
     }
 
     public void btnNumberOnClick(View v){
@@ -53,5 +111,8 @@ public class Calculator extends AppCompatActivity {
 
     public void btnClearOnClick(View v){
         edtResult.setText("");
+        firstNumber = 0;
+        secondNumber = 0;
+        pendingOperation = 0;
     }
 }
