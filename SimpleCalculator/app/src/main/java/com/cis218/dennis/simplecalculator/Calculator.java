@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.view.View;
 import android.util.Log;
+import java.lang.Math;
 
 public class Calculator extends AppCompatActivity {
 
@@ -93,6 +94,56 @@ public class Calculator extends AppCompatActivity {
         {
             pendingOperation = 0;
         }
+    }
+
+    public void btnAdvOpOnClick(View v){
+        String textLine = edtResult.getText().toString();
+        double subject;
+        if (textLine.equals("")){
+            subject = 0.0;
+        }
+        else
+        {
+            subject = Double.parseDouble(textLine);
+        }
+        int operation = ((Button)v).getId();
+
+        switch(operation){
+            case R.id.btnPercent:
+                edtResult.setText( String.valueOf(subject / 100) );
+                break;
+            case R.id.btnSqrt:
+                edtResult.setText( String.valueOf( Math.sqrt(subject)) );
+                break;
+            case R.id.btnCos:
+                edtResult.setText( String.valueOf( Math.cos(subject)) );
+                break;
+            // Random
+            case R.id.btnRand:
+                edtResult.setText( String.valueOf(Math.random() * 5000) );
+                break;
+            // SIN
+            case R.id.btnSin:
+                edtResult.setText( String.valueOf(Math.sin(subject)) );
+                break;
+            // Pi
+            case R.id.btnPi:
+                edtResult.setText( String.valueOf(Math.PI) );
+                break;
+            // Tan
+            case R.id.btnTan:
+                edtResult.setText( String.valueOf(Math.tan(subject)) );
+                break;
+            // X^2
+            case R.id.btnSqr:
+                edtResult.setText( String.valueOf(Math.pow(subject, 2)) );
+                break;
+            // Flip
+            case R.id.btnFlip:
+                edtResult.setText( String.valueOf(subject * -1) );
+                break;
+        }
+
     }
 
     public void btnNumberOnClick(View v){
