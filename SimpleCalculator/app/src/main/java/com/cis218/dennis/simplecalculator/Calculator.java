@@ -1,5 +1,6 @@
 package com.cis218.dennis.simplecalculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -21,7 +22,7 @@ public class Calculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
 
-        edtResult = (EditText)findViewById( R.id.edtResult );
+        edtResult = (EditText)findViewById( R.id.edtConversionResult);
         btnPlus = (Button)findViewById( R.id.btnPlus );
         btnMin = (Button)findViewById( R.id.btnMin );
         btnMult = (Button)findViewById( R.id.btnMult );
@@ -165,5 +166,17 @@ public class Calculator extends AppCompatActivity {
         firstNumber = 0;
         secondNumber = 0;
         pendingOperation = 0;
+    }
+
+    public void btnConversions(View v){
+        // Switch to other activity calc
+        // INTENT - intention to do something.
+
+        // Intent says where you're coming from and where you want to go
+        Intent intent = new Intent(this, ConversionActivity.class);
+
+        // PUT data in the intent
+        intent.putExtra("RESULT", edtResult.getText().toString());
+        startActivity(intent);
     }
 }
