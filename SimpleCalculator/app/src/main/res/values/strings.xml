@@ -1,3 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Calculator</string>
+    <string name="historyTitle">History</string>
+    <string name="titleToolbar">Calculator</string>
+    <string name="toastResult">Result:</string>
+    <string name="menuHistory">History</string>
+    <string name="menuCalculate">Calculate</string>
+    <string name="menuConversion">Conversion</string>
+    <string name="btnConversions">Conversions</string>
+    <string name="btnGoToCalculator">Go To Calculator</string>
+    <string name="btnClear">Clear</string>
+    <string name="btnC">C</string>
+    <string name="btnGoToConversions">Go to Conversions</string>
+    <string name="titleCalculator">Calculator</string>
+    <string name="toastRunningOnCreate">Running on Create!</string>
 </resources>

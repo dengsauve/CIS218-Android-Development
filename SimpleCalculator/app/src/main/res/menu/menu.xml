@@ -4,11 +4,11 @@
 
     <item
         android:id="@+id/menuHistory"
-        android:title="History" />
+        android:title="@string/menuHistory" />
     <item
         android:id="@+id/menuCalculate"
-        android:title="Calculate" />
+        android:title="@string/menuCalculate" />
     <item
         android:id="@+id/menuConversion"
-        android:title="Conversion" />
+        android:title="@string/menuConversion" />
 </menu>

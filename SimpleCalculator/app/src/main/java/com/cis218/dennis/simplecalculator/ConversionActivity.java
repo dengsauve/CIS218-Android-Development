@@ -25,7 +25,7 @@ public class ConversionActivity extends BaseActivity {
         Log.i("CALC", "ResultStr: " + resultStr);
         edtConversionResult.setText( resultStr );
 
-        ToastIt("Running on Create!");
+        ToastIt(getString(R.string.toastRunningOnCreate));
 
     }
 

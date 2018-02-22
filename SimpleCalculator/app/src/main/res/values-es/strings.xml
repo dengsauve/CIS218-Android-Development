@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculadora simple</string>
+    <string name="historyTitle">Historia</string>
+    <string name="titleToolbar">Calculadora</string>
+    <string name="toastResult">Resultado:</string>
+    <string name="menuHistory">Historia</string>
+    <string name="menuCalculate">Calcular</string>
+    <string name="menuConversion">Conversión</string>
+    <string name="btnConversions">Conversiones</string>
+    <string name="btnGoToCalculator">Ir a la Calculadora</string>
+    <string name="btnClear">Claro</string>
+    <string name="btnC">C</string>
+    <string name="btnGoToConversions">Ir a Conversiones</string>
+    <string name="titleCalculator">Calcular</string>
+    <string name="toastRunningOnCreate">Ejecutando en Create!</string>
+</resources>

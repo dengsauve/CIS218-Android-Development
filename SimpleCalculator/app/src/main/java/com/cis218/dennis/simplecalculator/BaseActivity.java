@@ -18,7 +18,7 @@ public class BaseActivity extends AppCompatActivity {
         setContentView( R.layout.activity_base );
         // Get Toolbar
         toolbar = findViewById( R.id.toolbar );
-        toolbar.setTitle("Calculator");
+        toolbar.setTitle(R.string.titleToolbar);
     }
 
     @Override
@@ -59,3 +59,12 @@ public class BaseActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 }
+
+/*
+Notes on localization
+
+Right click on string
+Extract string resource
+
+
+ */

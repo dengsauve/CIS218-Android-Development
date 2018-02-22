@@ -92,7 +92,7 @@ public class Calculator extends BaseActivity {
         if (notEquals) {
             pendingOperation = operation;
             edtResult.setText("");
-            ToastIt("Result: " + Double.toString(firstNumber));
+            ToastIt(getString(R.string.toastResult) + Double.toString(firstNumber));
         }
         else
         {
