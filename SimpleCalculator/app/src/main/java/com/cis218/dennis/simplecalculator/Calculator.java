@@ -3,17 +3,19 @@ package com.cis218.dennis.simplecalculator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 import android.view.View;
 import android.util.Log;
+
 import java.lang.Math;
 
-public class Calculator extends AppCompatActivity {
+public class Calculator extends BaseActivity {
 
     Button btnPlus, btnMin, btnMult, btnDiv;
-    EditText edtResult;
+    public static EditText edtResult;
     int pendingOperation = 0;
     double firstNumber, secondNumber;
 
@@ -27,6 +29,7 @@ public class Calculator extends AppCompatActivity {
         btnMin = (Button)findViewById( R.id.btnMin );
         btnMult = (Button)findViewById( R.id.btnMult );
         btnDiv = (Button)findViewById( R.id.btnDiv );
+
 
     }
 
@@ -89,7 +92,7 @@ public class Calculator extends AppCompatActivity {
         if (notEquals) {
             pendingOperation = operation;
             edtResult.setText("");
-            Toast.makeText(this, "Result: " + Double.toString(firstNumber), Toast.LENGTH_SHORT).show();
+            ToastIt("Result: " + Double.toString(firstNumber));
         }
         else
         {

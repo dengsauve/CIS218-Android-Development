@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-public class ConversionActivity extends AppCompatActivity {
+public class ConversionActivity extends BaseActivity {
 
     String resultStr = "";
     EditText edtConversionResult;
@@ -24,6 +24,8 @@ public class ConversionActivity extends AppCompatActivity {
         resultStr = intent.getStringExtra("RESULT");
         Log.i("CALC", "ResultStr: " + resultStr);
         edtConversionResult.setText( resultStr );
+
+        ToastIt("Running on Create!");
 
     }
 
